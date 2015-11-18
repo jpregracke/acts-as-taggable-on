@@ -42,6 +42,15 @@ module ActsAsTaggableOn::Taggable
 
         def reset_column_information
           super
+          clear_acts_as_taggable_on_cache_columns
+        end
+
+        def clear_caches_calculated_from_columns
+          super
+          clear_acts_as_taggable_on_cache_columns
+        end
+
+        def clear_acts_as_taggable_on_cache_columns
           @acts_as_taggable_on_cache_columns = nil
         end
       end
